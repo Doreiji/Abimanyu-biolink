@@ -1,0 +1,172 @@
+.sora-<uniquifier> {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it appears above other content */
+}
+
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.3); /* White border with transparency */
+    border-radius: 50%;
+    border-top: 4px solid #ffffff; /* White top border */
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px); /* Adjust the distance as needed */
+  }
+}
+
+.bounce-animation {
+  animation: bounce 0.5s ease alternate; /* Adjust the duration and timing function as needed */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Sora", sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+    background: #0A2463;
+}
+
+/* Add initial opacity to hide the content */
+.main-content {
+    opacity: 0;
+    transition: opacity 1.5s ease; /* Add transition for opacity */
+}
+
+/* Add active class to trigger the fade-in animation */
+.main-content.active {
+    opacity: 1;
+}
+
+.container {
+    position: absolute;
+    top: 45%; /* Adjust to move content higher or lower */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* Ensure content appears above background */
+}
+
+.top-right-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Horizontally align text */
+}
+
+.trakteer-logo {
+  width: 30px;
+  margin-right: margin-right: 20px;
+  height: auto;
+}
+
+.top-right-text {
+    font-size: 10px;
+    margin-top: 2px;
+    display: block;
+    width: 100%; /* Ensure text takes up full width of container */
+    color: #FFFAFF;
+}
+
+.profile img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border: solid 8px #D8315B;
+    border-radius: 50%;
+}
+
+.nickname {
+    color: #FFFAFF;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 19px;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.bio {
+    width: 300px;
+    color: #FFFAFF;
+    font-size: 9px;
+    margin-bottom: 35px;
+}
+
+.social-media-button:focus {
+  outline: none;
+}
+
+/* Add initial opacity and transform properties to hide the social media buttons */
+.social-media-button {
+    opacity: 0;
+    transform: translateX(-50px); /* Start position outside the left */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Adjust transition duration */
+}
+
+/* Add active class to trigger the slide-in animation */
+.social-media-button.active {
+    opacity: 1;
+    transform: translateX(0); /* End position at the original position */
+}
+
+.button {
+    display: block; /* Display buttons as block elements */
+    width: 260px; /* Adjust width as needed */
+    padding: 10px 20px;
+    margin: 5px auto; /* Center buttons horizontally */
+    background-color: #D8315B; /* Twitter blue button background color */
+    color: #1E1B18; /* Button text color */
+    text-decoration: none;
+    border-radius: 50px;
+    background-color 0.3s ease, color 0.3s ease; /* Transition effect for smooth hover */
+}
+
+.button:hover {
+    background-color: #364156; /* New background color on hover */
+    color: #fff; /* New text color on hover */
+}
+
+.button {
+    margin-bottom: 15px; /* Add margin-right to create space between buttons */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    z-index: 999; /* Ensure footer stays on top */
+}
